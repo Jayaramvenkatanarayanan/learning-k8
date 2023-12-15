@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-learning-app
+  labels:
+    type: ubuntu-webserver
+    environment: development
+spec:
+  containers:
+    - name: ubuntu-webserver
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      env:
+        - name: NGINX_HOST
+          value: "jayaram.com"

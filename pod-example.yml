@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-sample-app
+  labels:
+    tier: backendserver
+    environment: development
+    track: weekly
+spec:
+  containers:
+    - name: nginx-server
+      image: nginx
+      ports:
+        - containerPort: 90
