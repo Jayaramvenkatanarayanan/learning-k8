@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: php-frontend
+  labels:
+    app: guestbook
+    tier: php-redis
+spec:
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: php-redis
+          image: laravelfans/laravel
+          ports:
+            - containerPort: 80
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp
+# copy data from normal pod and paste
+#all meta data name should be same
+
